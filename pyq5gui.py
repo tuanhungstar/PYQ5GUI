@@ -19,7 +19,7 @@ class Ui(QtWidgets.QMainWindow):
         super(Ui, self).__init__()
         self.setFixedSize(600, 360)
         uic.loadUi('./assets/GUI.ui', self)
-
+#Classification tab###############################
         #Logical group ComboBox
         self.select_logical_group = self.findChild(QtWidgets.QComboBox,'select_logical_group')
         self.select_logical_group.currentTextChanged.connect(self.change_logical_group)
@@ -41,7 +41,23 @@ class Ui(QtWidgets.QMainWindow):
         self.txt_link_to_file = self.findChild(QtWidgets.QLineEdit,'txt_link_to_file')
         #Text Lable
         self.txt_status = self.findChild(QtWidgets.QLabel,'txt_status')
+#Train data tab###############################
+        #Train ABC button
+        self.tra_btt_train_ruleabc = self.findChild(QtWidgets.QPushButton, 'tra_btt_train_ruleabc') # Find the button
+        self.tra_btt_train_ruleabc.clicked.connect(self.tra_train_ruleabc)
 
+
+        #Train D button
+        self.tra_btt_train_ruled = self.findChild(QtWidgets.QPushButton, 'tra_btt_train_ruled') # Find the button
+        self.tra_btt_train_ruled.clicked.connect(self.tra_train_ruled)
+
+
+        #Progress Bar
+        self.tra_bar_load_motable  = self.findChild(QtWidgets.QProgressBar, 'tra_bar_load_motable')
+        self.tra_bar_load_motable  = self.findChild(QtWidgets.QProgressBar, 'tra_bar_load_motable')
+        self.tra_bar_load_motable  = self.findChild(QtWidgets.QProgressBar, 'tra_bar_load_motable')
+        #List box tra_list_run_detail
+        self.tra_list_run_detail = self.findChild(QtWidgets.QListWidget,'tra_list_run_detail')
 #Configuration Tap############################
         #Reset to default button
         self.conf_btt_set_todefault = self.findChild(QtWidgets.QPushButton, 'conf_btt_set_todefault') # Find the button
@@ -154,6 +170,12 @@ class Ui(QtWidgets.QMainWindow):
     def conf_set_hsdatabase(self):
         folder_link = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
         self.conf_txt_link_hsdatabase.setText(folder_link)
+        return
+    def tra_train_ruleabc(self):
+        self.tra_list_run_detail.addItem('hung')
+        return
+    def tra_train_ruled(self):
+        self.tra_list_run_detail.clear()
         return
 #END get file or table link to save config file###################
     def get_folder_link(seft):
