@@ -1,0 +1,1 @@
+C:\Users\hung-pro7\Anaconda3\envs\myenv1\Scripts>pyuic5 -x "D:\python\PYQ5GUI\GUI.ui" -o "D:\python\PYQ5GUI\GUI.py"

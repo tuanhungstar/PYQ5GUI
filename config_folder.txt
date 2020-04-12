@@ -1,0 +1,1 @@
+{"conf_txt_link_motable": "D:/python", "conf_txt_link_termcode": "D:/python", "conf_txt_link_pepfile": "D:/python", "conf_txt_link_hsdatabase": "D:/python"}
